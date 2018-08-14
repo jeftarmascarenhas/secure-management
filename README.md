@@ -1,12 +1,14 @@
-# Start for project React with Redux
+# Secure Management
 
-### Motivation
-I created this little boilerplate to initialize studies and design cleanly.
-The boilerplate was created with: `create-react-app`
 
 ### Libraries used
 * [React]
 * [Redux]
+* [axios]
+* [node-sass-chokidar]
+* [node-sass-chokidar]
+* [react-loadable]
+* [npm-run-all]
 * [Redux-Thunk]
 * [Enzyme]
 * [Jest]
@@ -18,10 +20,10 @@ Coming soon
 ### Installation
 Clone this repository and install dependency with `yarn install` or `npm install`
 
-### Start boilerplate
+### Start Secure Management
 
 ```sh
-$ cd react-redux-start
+$ cd secure-management
 $ yarn install
 $ yarn start
 ```
