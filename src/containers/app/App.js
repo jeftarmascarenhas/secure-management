@@ -1,45 +1,22 @@
-import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React from 'react'
 
-import * as appActionCreators from './App.actions'
-import Header from '../../components/commom/Header'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import Logo from '../../images/logo.svg'
+import PrivateRoute from '../HoC/PrivateRoute'
+import NotFound from '../NotFoundPage/Loadable'
+import Sites from '../SitesPage/Loadable'
+import Login from '../LoginPage/Loadable'
 
-class App extends Component {
-  componentDidMount() {
-    const { getText } = this.props
-    getText('New Redux Text...')
-  }
+const App = () => (
+  <React.Fragment>
+    <Router>
+      <Switch>
+        <PrivateRoute exact path="/" component={Sites} />
+        <Route path="/login" component={Login} />
+        <Route path="" component={NotFound} />
+      </Switch>
+    </Router>
+  </React.Fragment>
+)
 
-  render() {
-    const { text } = this.props
-    return (
-      <div className="App">
-        <button className="btn">
-          Teste
-        </button>
-        <Header
-          logo={Logo}
-        />
-        <p className="App-intro">
-          {text}
-        </p>
-      </div>
-    )
-  }
-}
-
-App.propTypes = {
-  getText: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
-}
-
-const mapStateToProps = state => ({ text: state.text })
-const mapDispatchToProps = dispatch => bindActionCreators(appActionCreators, dispatch)
-
-const AppConnect = connect(mapStateToProps, mapDispatchToProps)(App)
-
-export default AppConnect
+export default App
