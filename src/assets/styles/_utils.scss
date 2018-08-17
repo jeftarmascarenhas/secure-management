@@ -1,0 +1,55 @@
+.--text-align-certer {
+  text-align: center;
+}
+
+.--text-align-left {
+  text-align: left;
+}
+
+.--text-align-right {
+  text-align: right;
+}
+
+.--text-align-justify {
+  text-align: justify;
+}
+
+.--p-1 {
+  padding: $size-unity-default / 2;
+}
+
+.--p-2 {
+  padding: $size-unity-default;
+}
+
+.--d-none {
+  display: none;
+}
+
+.--d-inline {
+  display: inline;
+}
+
+.--d-inline-block {
+  display: inline-block;
+}
+
+.--d-block {
+  display: block;
+}
+
+.--d-flex {
+  display: flex;
+}
+
+.transform-center {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.--inherit-weigtht-body {
+  width: inherit;
+  height: inherit;
+}

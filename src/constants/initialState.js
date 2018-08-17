@@ -1,1 +1,3 @@
-export const GET_TEXT = 'Defatul Text'
+export const login = {
+  isAuthenticated: false,
+}

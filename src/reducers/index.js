@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import text from '../containers/app/App.reducer'
+import login from '../containers/LoginPage/login.reducer'
 
 const rootReducers = combineReducers({
-  text,
+  login,
 })
 
 export default rootReducers

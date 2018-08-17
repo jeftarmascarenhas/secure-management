@@ -16,7 +16,8 @@
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react/button-has-type": false,
       "import/no-extraneous-dependencies": false,
-      "import/prefer-default-export": false
+      "import/prefer-default-export": false,
+      "import/no-named-as-default": false
   },
   "env": {
     "browser": true,

@@ -1,0 +1,214 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  color: #007bff;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+  a:hover {
+    color: #222; }
+
+@media (min-width: 768) {
+  body {
+    font-size: 15px; } }
+
+@media (min-width: 992) {
+  body {
+    font-size: 16px; } }
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 0;
+  border-radius: 0.1rem;
+  background-color: #eee;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .575rem .95rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  cursor: pointer; }
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear; }
+  .btn-primary:hover {
+    background-color: #222;
+    border-color: #222; }
+
+.btn-light {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa; }
+
+.btn-block {
+  display: block;
+  width: 100%; }
+
+.--text-align-certer {
+  text-align: center; }
+
+.--text-align-left {
+  text-align: left; }
+
+.--text-align-right {
+  text-align: right; }
+
+.--text-align-justify {
+  text-align: justify; }
+
+.--p-1 {
+  padding: 0.5rem; }
+
+.--p-2 {
+  padding: 1rem; }
+
+.--d-none {
+  display: none; }
+
+.--d-inline {
+  display: inline; }
+
+.--d-inline-block {
+  display: inline-block; }
+
+.--d-block {
+  display: block; }
+
+.--d-flex {
+  display: flex; }
+
+.transform-center {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%; }
+
+.--inherit-weigtht-body {
+  width: inherit;
+  height: inherit; }
+
+.card {
+  background-color: #fff; }
+  .card.--card-radius {
+    border-radius: 0.1rem; }
+
+.card__header, .card__body, .card__footer {
+  padding: 1em; }
+
+.card--shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.container-flex {
+  max-width: auto; }
+
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit; }
+
+h1, .h1 {
+  font-size: 2.5rem; }
+
+h2, .h2 {
+  font-size: 2rem; }
+
+h3, .h3 {
+  font-size: 1.75rem; }
+
+h4, .h4 {
+  font-size: 1.5rem; }
+
+h5, .h5 {
+  font-size: 1.25rem; }
+
+h6, .h6 {
+  font-size: 1rem; }
+
+.form-group {
+  margin-bottom: 1rem; }
+
+.form-input {
+  display: block;
+  width: 100%;
+  height: calc(2.45rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.1rem;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; }
