@@ -4,14 +4,14 @@ import PropTypes from 'prop-types'
 const Button = ({
   label,
   type,
-  color,
+  typeBtn,
   block,
   handlerClick,
 }) => (
   <button
     type={type}
     onClick={handlerClick}
-    className={`btn btn-${color} ${block ? 'btn-block' : ''}`}
+    className={`btn btn-${typeBtn} ${block ? 'btn-block' : ''}`}
   >
     {label}
   </button>
@@ -19,7 +19,7 @@ const Button = ({
 
 Button.defaultProps = {
   type: 'button',
-  color: 'light',
+  typeBtn: 'light',
   block: false,
   handlerClick: event => console.log(event),
 }
@@ -27,7 +27,7 @@ Button.defaultProps = {
 Button.propTypes = {
   label: PropTypes.string.isRequired,
   type: PropTypes.string,
-  color: PropTypes.string,
+  typeBtn: PropTypes.string,
   block: PropTypes.bool,
   handlerClick: PropTypes.func,
 }

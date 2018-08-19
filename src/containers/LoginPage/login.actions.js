@@ -1,23 +1,20 @@
-import { AUTHENTICATED, LOGOUT, UNAUTHENTICATED } from './login.types'
+import { AUTHENTICATED, LOGOUT, UNAUTHORIZED } from './login.types'
 import coreApi from '../../api/coreApi'
 
 export const loginAuth = (email, password) => async (dispatch) => {
   try {
-    const { data, status } = await coreApi.postLogin(email, password)
-    console.log(data, status)
+    const { data } = await coreApi.postLogin(email, password)
     dispatch({ type: AUTHENTICATED })
-    localStorage.user = JSON.stringify(data)
+    localStorage.token = data.token
   } catch (error) {
-    console.error(error)
-    delete localStorage.user
-    dispatch({ type: UNAUTHENTICATED })
+    delete localStorage.token
+    dispatch({ type: UNAUTHORIZED, payload: error.response.data })
   }
 }
 
-export const logout = () => dispatch => new Promise((resolve) => {
+export const logout = () => (dispatch) => {
   dispatch({
     type: LOGOUT,
   })
-  delete localStorage.user
-  resolve()
-})
+  delete localStorage.token
+}

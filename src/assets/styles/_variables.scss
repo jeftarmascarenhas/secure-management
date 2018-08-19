@@ -3,9 +3,12 @@ $card-color: $white-color;
 $btn-color: #eee;
 $title-color: #222;
 $primary-color: #007bff;
-$text-color: #757575;
+$text-color: #4B4F56;
+$bg-color: #FCFCFC !default;
 $primary-hover-color: $title-color;
 $anchor-color: $primary-color;
+$box-shadow-color:rgba(0,0,0,.08);
+$box-shadow-hover-color:rgba(0,0,0,.16);
 $anchor-hover-color: $title-color;
 
 $size-unity-default: 1rem;

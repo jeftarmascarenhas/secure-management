@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { Redirect, Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { Helmet } from 'react-helmet'
 
 import Card from '../../components/card/Card'
 import CardHeader from '../../components/card/CardHeader'
 import CardBody from '../../components/card/CardBody'
-import TextField from '../../components/commom/TextField'
-import Button from '../../components/commom/Button'
+import FormLogin from '../../components/Forms/FormLogin'
 
 import * as loginCreators from './login.actions'
 
@@ -37,7 +37,7 @@ class Login extends Component {
 
   render() {
     const { email, password } = this.state
-    const { redirectToReferrer } = this.props
+    const { redirectToReferrer, authError } = this.props
     if (redirectToReferrer) {
       return (
         <Redirect to="/" />
@@ -50,38 +50,29 @@ class Login extends Component {
         }}
         className="--inherit-weigtht-body"
       >
+        <Helmet
+          titleTemplate="%s Cedrotech soluções Tecnológicas"
+          defaultTitle="Login"
+        >
+          <meta name="description" content="A app cedrotech Test" />
+        </Helmet>
         <div style={{ width: '100%', maxWidth: 450 }} className="transform-center">
           <Card>
             <CardHeader className="card__header">
               <h1 className="h1 --text-align-certer">
                 Autenticação
               </h1>
+              {!!authError && <p className="--text-align-certer">{authError.message}</p> }
             </CardHeader>
             <CardBody className="card__body">
-              <form onSubmit={this.handleSubmit}>
-                <TextField
-                  value={email}
-                  name="email"
-                  onChange={this.handleInputChange}
-                  type="text"
-                  placeholder="Username"
-                />
-                <TextField
-                  value={password}
-                  name="password"
-                  onChange={this.handleInputChange}
-                  type="password"
-                  placeholder="Password"
-                />
-                <Button
-                  type="submit"
-                  label="Login"
-                  color="primary"
-                  block
-                />
-              </form>
+              <FormLogin
+                handleSubmit={this.handleSubmit}
+                handleInputChange={this.handleInputChange}
+                email={email}
+                password={password}
+              />
               <p className="--text-align-certer --p-2">
-                <Link to="/">
+                <Link to="/register">
                   Não tem uma conta? Click aqui para criar
                 </Link>
               </p>
@@ -93,13 +84,19 @@ class Login extends Component {
   }
 }
 
+Login.defaultProps = {
+  authError: {},
+}
+
 Login.propTypes = {
   loginAuth: PropTypes.func.isRequired,
   redirectToReferrer: PropTypes.bool.isRequired,
+  authError: PropTypes.objectOf(PropTypes.object),
 }
 
 const mapStateToProps = state => ({
   redirectToReferrer: state.login.isAuthenticated,
+  authError: state.login.authError,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators(loginCreators, dispatch)

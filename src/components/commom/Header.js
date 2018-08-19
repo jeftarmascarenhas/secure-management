@@ -1,21 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Header = ({ logo }) => (
-  <header className="App-header">
-    <img
-      src={logo}
-      className="App-logo"
-      alt="logo"
-    />
-    <h1 className="App-title">
-      Welcome to React
-    </h1>
+const Header = ({ title, subtitle }) => (
+  <header className="header header-margin-left">
+    <h1>{title}</h1>
+    <h4 className="subtitle">{subtitle}</h4>
   </header>
 )
 
 Header.propTypes = {
-  logo: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
 }
 
 export default Header
