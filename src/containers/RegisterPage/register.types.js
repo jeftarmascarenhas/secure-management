@@ -1,0 +1,3 @@
+export const NEW_REGISTER = 'NEW_REGISTER'
+export const REGISTER_ERROR = 'REGISTER_ERROR'
+export const UNAUTHORIZED = 'UNAUTHORIZED'
